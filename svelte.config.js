@@ -16,6 +16,7 @@ const config = {
 		  postcss: true,
 		}),
 	  ],
+
 };
 
 export default config;
