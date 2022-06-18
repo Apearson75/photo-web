@@ -1,5 +1,6 @@
 <script>
 	import Nav from '$lib/Nav.svelte';
+	import Card from '$lib/Card.svelte';
 	var imageList = {
 		images: [
 			{
@@ -20,14 +21,11 @@
 
 <div class="">
 	<Nav />
-	<div class="sm:grid sm:grid-cols-3 sm:space-y-0 sm:gap-6 rounded-lg">
+	<div class="sm:grid sm:grid-cols-3 sm:space-y-0 sm:gap-6 lg:flex lg:flex-wrap lg:flex-l lg:px-80 lg:py-10 lg:mx-40 rounded-lg">
 		<div class="h-56 px-2">
 			{#each imageList['images'] as image}
 				<!-- svelte-ignore a11y-img-redundant-alt -->
-				<div class= " rounded-lg shadow-lg bg-orange-200">	
-					<img src={image['image']} alt="An Image" class="object-cover my-2" />
-					<p class=" font-semibold text-end -py-2 h-8 text-lg px-2">{image['title']}</p>
-				</div>	
+				<Card image={image['image']} title={image['title']} />
 			{/each}
 		</div>
 	</div>
